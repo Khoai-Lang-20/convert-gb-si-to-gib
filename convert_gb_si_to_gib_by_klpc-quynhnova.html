@@ -1,0 +1,117 @@
+<!doctype html><html lang="vi"><head><meta name="author" content="KLPC-QuynhNova"><meta name="copyright" content="© 2025 KLPC-QuynhNova. All rights reserved."><!-- 🔒 Hidden Signature (automatically added) --><!-- Signature ID: QNV-DDB588F4 --><!-- Original file SHA256 (before protection): 2b3d98a6af23c76d099d9e6975836d6223fc441dbb5acaf72f8be618d7bf69d9 --><!-- Protected on: 2025-10-26 13:56:50 | Version: 1.0 --><meta charset="utf-8" /><meta name="viewport" content="width=device-width,initial-scale=1" /><title>Chuyển đổi Gigabyte (SI) ⇆ Gigabyte [GB] (GiB)</title><style> body{font-family:Inter,Segoe UI,Roboto,Arial,sans-serif;background:#f4fbfb;color:#074b4b;display:flex;align-items:center;justify-content:center;min-height:100vh;margin:0} .card{background:white;padding:20px 22px;border-radius:12px;box-shadow:0 6px 18px rgba(3,60,60,0.08);max-width:520px;width:100%} h1{font-size:18px;margin:0 0 8px;text-align:center} .info-box{background:#f0fdfd;border:1px solid #b6ebeb;border-radius:8px;padding:12px;margin-bottom:14px;font-size:14px;color:#0b6b6b} .input-section{display:flex;flex-direction:column;gap:10px;margin-bottom:10px} input[type=number]{padding:10px;border-radius:8px;border:1px solid #d6f0f0;font-size:15px;width:100%} .options{display:flex;gap:8px;justify-content:space-between} select{flex:1;padding:10px;border-radius:8px;border:1px solid #d6f0f0;font-size:15px} button{background:#06a09e;color:white;padding:10px 12px;border-radius:8px;border:0;cursor:pointer;min-width:90px} .result{margin-top:14px;padding:12px;border-radius:8px;background:#f0fdfd;border:1px solid #e0f7f7} .muted{font-size:13px;color:#0b6b6b} footer{margin-top:12px;font-size:13px;color:#0b6b6b;display:flex;align-items:center;gap:8px;flex-wrap:wrap;justify-content:center} .small-btn{background:#e6ffff;color:#066; padding:8px 10px;border-radius:8px;border:0;cursor:pointer} .credit{margin-top:18px;text-align:center;font-size:13px;color:#0a5c5c;opacity:0.8} </style></head><body><div class="card"><h1>Chuyển đổi Gigabyte (SI) ⇆ Gigabyte [GB] (GiB)</h1><div class="info-box"><strong>Giải thích:</strong><br> • <b>Gigabyte (SI)</b> = 10⁹ bytes (hệ thập phân, ký hiệu <b>GB [SI]</b>)<br> • <b>Gigabyte nhị phân (GiB)</b> = 2³⁰ bytes (hệ nhị phân, ký hiệu <b>GB [Binary]</b> hoặc <b>GiB</b>)<br><br><strong>Công thức:</strong><br> • GiB = GB_SI × 10⁹ / 2³⁰<br> • Ngược lại: GB_SI = GiB × 2³⁰ / 10⁹<br><br> Dùng lựa chọn bên dưới để chuyển đổi <b>thuận hoặc ngược</b> giữa hai hệ. </div><div class="input-section"><input id="inputVal" type="number" step="any" min="0" value="128" /><div class="options"><select id="direction"><div class="copy-allowed"><option value="si2gib">GB (SI) → GiB</option></div><option value="gib2si">GiB → GB (SI)</option></select><select id="decimals"><option value="2">Làm tròn 2 chữ số</option><option value="3">Làm tròn 3 chữ số</option><option value="0">Làm tròn 0 chữ số</option></select><button id="convertBtn">Quy đổi</button></div></div><div class="result" id="resultBox" aria-live="polite"></div><footer><button class="small-btn" id="swapBtn">Đổi chiều</button><button class="small-btn" id="copyBtn">Sao chép kết quả</button><span class="muted">(Tự động làm tròn theo lựa chọn ở trên)</span></footer><div class="credit"> ✦ Thực hiện bởi <b>KLPC-QuynhNova</b> cùng <b>ChatGPT</b> ✦ </div><div class="credit"> ✦ Bản gốc: © 2025 KLPC-QuynhNova — Protected ✦ </div></div><script> function convertGBSItoGiB(value){ const bytes = Number(value) * 1e9; return bytes / Math.pow(2,30); } function convertGiBtoGBSI(value){ const bytes = Number(value) * Math.pow(2,30); return bytes / 1e9; } function showResult(){ const v = Number(document.getElementById('inputVal').value) || 0; const d = Number(document.getElementById('decimals').value); const direction = document.getElementById('direction').value; let resultText = ''; if(direction === 'si2gib'){ const gib = convertGBSItoGiB(v); resultText = `${v} GB (SI) = ${gib.toFixed(d)} GiB (Binary)`; } else { const gbsi = convertGiBtoGBSI(v); resultText = `${v} GiB (Binary) = ${gbsi.toFixed(d)} GB (SI)`; } document.getElementById('resultBox').textContent = resultText; return resultText; } document.getElementById('convertBtn').addEventListener('click', showResult); document.getElementById('swapBtn').addEventListener('click', function(){ const dir = document.getElementById('direction'); dir.value = dir.value === 'si2gib' ? 'gib2si' : 'si2gib'; showResult(); }); document.getElementById('copyBtn').addEventListener('click', function(){ const t = showResult(); navigator.clipboard?.writeText(t).then(()=>{ alert('Đã sao chép kết quả:\n'+t); }, ()=>{ alert('Không thể sao chép — bạn có thể bôi đen và sao chép thủ công.'); }); }); window.addEventListener('load', showResult); document.getElementById('inputVal').addEventListener('keydown', e => { if(e.key==='Enter') showResult(); }); </script><!-- Hidden watermark in DOM (for provenance verification) --><p id="hidden-watermark" style="display:none">QNV-DDB588F4 | Original-SHA256:2b3d98a6af23c76d099d9e6975836d6223fc441dbb5acaf72f8be618d7bf69d9</p><script> // Console signature for provenance checks console.log("Protected file — Signature ID: QNV-DDB588F4 | Original SHA256: 2b3d98a6af23c76d099d9e6975836d6223fc441dbb5acaf72f8be618d7bf69d9"); </script><script>eval(atob('KGZ1bmN0aW9uKCl7IHRyeSB7IGNvbnN0IFNJR05BVFVSRSA9ICLCqSBLTFBDLVF1eW5oTm92YSDigJQgU2lnbmF0dXJlOiBRTlYtRERCNTg4RjQiOyBjb25zdCBaVyA9ICdcdTIwMEInOyBkb2N1bWVudC5hZGRFdmVudExpc3RlbmVyKCdjb250ZXh0bWVudScsIGUgPT4gZS5wcmV2ZW50RGVmYXVsdCgpLCB7Y2FwdHVyZTp0cnVlfSk7IGRvY3VtZW50LmFkZEV2ZW50TGlzdGVuZXIoJ3NlbGVjdHN0YXJ0JywgZSA9PiBlLnByZXZlbnREZWZhdWx0KCksIHtjYXB0dXJlOnRydWV9KTsgZG9jdW1lbnQuYWRkRXZlbnRMaXN0ZW5lcignbW91c2Vkb3duJywgZnVuY3Rpb24oZSl7IGlmIChlLmJ1dHRvbiA9PT0gMikgeyBlLnByZXZlbnREZWZhdWx0KCk7IGUuc3RvcFByb3BhZ2F0aW9uKCk7IH0gfSwge2NhcHR1cmU6dHJ1ZX0pOyBkb2N1bWVudC5hZGRFdmVudExpc3RlbmVyKCdrZXlkb3duJywgZnVuY3Rpb24oZSl7IGlmIChlLmtleSA9PT0gJ0YxMicpIHsgZS5wcmV2ZW50RGVmYXVsdCgpOyBlLnN0b3BQcm9wYWdhdGlvbigpOyB9IGlmIChlLmN0cmxLZXkgJiYgKGUua2V5ID09PSAnYycgfHwgZS5rZXkgPT09ICdzJyB8fCBlLmtleSA9PT0gJ3UnIHx8IGUua2V5ID09PSAnQycgfHwgZS5rZXkgPT09ICdTJyB8fCBlLmtleSA9PT0gJ1UnKSl7IGUucHJldmVudERlZmF1bHQoKTsgZS5zdG9wUHJvcGFnYXRpb24oKTsgfSB9LCB7Y2FwdHVyZTp0cnVlfSk7IGRvY3VtZW50LmFkZEV2ZW50TGlzdGVuZXIoJ2NvcHknLCBmdW5jdGlvbihlKXsgdHJ5IHsgZS5wcmV2ZW50RGVmYXVsdCgpOyBsZXQgc2VsID0gKHdpbmRvdy5nZXRTZWxlY3Rpb24gJiYgd2luZG93LmdldFNlbGVjdGlvbigpLnRvU3RyaW5nKCkpIHx8ICcnOyBpZiAoIXNlbCkgeyBjb25zdCBlbCA9IGRvY3VtZW50LmFjdGl2ZUVsZW1lbnQ7IGlmIChlbCAmJiAoZWwudmFsdWUgfHwgZWwuaW5uZXJUZXh0KSkgc2VsID0gZWwudmFsdWUgfHwgZWwuaW5uZXJUZXh0IHx8ICcnOyB9IGNvbnN0IG9iZiA9IHNlbC5zcGxpdCgnJykuam9pbihaVykgKyAiXG5cbiIgKyBTSUdOQVRVUkU7IGUuY2xpcGJvYXJkRGF0YS5zZXREYXRhKCd0ZXh0L3BsYWluJywgb2JmKTsgZS5jbGlwYm9hcmREYXRhLnNldERhdGEoJ3RleHQvaHRtbCcsIG9iZik7IChmdW5jdGlvbiBmbGFzaCgpeyBjb25zdCBub3RlID0gZG9jdW1lbnQuY3JlYXRlRWxlbWVudCgnZGl2Jyk7IG5vdGUudGV4dENvbnRlbnQgPSAnQ29waWVkIHRleHQgaGFzIHdhdGVybWFyayc7IG5vdGUuc3R5bGUucG9zaXRpb249J2ZpeGVkJzsgbm90ZS5zdHlsZS5yaWdodD0nMTBweCc7IG5vdGUuc3R5bGUuYm90dG9tPScxMHB4Jzsgbm90ZS5zdHlsZS5iYWNrZ3JvdW5kPSdyZ2JhKDAsMCwwLDAuNyknOyBub3RlLnN0eWxlLmNvbG9yPSd3aGl0ZSc7IG5vdGUuc3R5bGUucGFkZGluZz0nNnB4IDEwcHgnOyBub3RlLnN0eWxlLnpJbmRleD0yMTQ3NDgzNjQ3OyBub3RlLnN0eWxlLmJvcmRlclJhZGl1cz0nNnB4JzsgZG9jdW1lbnQuYm9keS5hcHBlbmRDaGlsZChub3RlKTsgc2V0VGltZW91dCgoKT0+bm90ZS5yZW1vdmUoKSwxMjAwKTsgfSkoKTsgfSBjYXRjaChlcnIpeyB9IH0sIHtjYXB0dXJlOnRydWV9KTsgZnVuY3Rpb24gcmVuZGVyRWxlbWVudFRvQ2FudmFzKGVsKXsgdHJ5IHsgY29uc3QgdGV4dCA9IGVsLmlubmVyVGV4dCB8fCBlbC50ZXh0Q29udGVudCB8fCBlbC52YWx1ZSB8fCAnJzsgY29uc3QgbGluZXMgPSB0ZXh0LnNwbGl0KC9ccj9cbi8pOyBjb25zdCB3ID0gTWF0aC5tYXgoNjAwLCBNYXRoLm1pbigxMjAwLCBlbC5jbGllbnRXaWR0aCB8fCA4MDApKTsgY29uc3QgbGluZUhlaWdodCA9IDIyOyBjb25zdCBoID0gTWF0aC5tYXgoODAsIGxpbmVzLmxlbmd0aCAqIGxpbmVIZWlnaHQgKyAyMCk7IGNvbnN0IGNhbnZhcyA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoJ2NhbnZhcycpOyBjYW52YXMud2lkdGggPSB3OyBjYW52YXMuaGVpZ2h0ID0gaDsgY2FudmFzLnNldEF0dHJpYnV0ZSgnYXJpYS1oaWRkZW4nLCd0cnVlJyk7IGNvbnN0IGN0eCA9IGNhbnZhcy5nZXRDb250ZXh0KCcyZCcpOyBjdHguZmlsbFN0eWxlID0gZ2V0Q29tcHV0ZWRTdHlsZShkb2N1bWVudC5ib2R5KS5iYWNrZ3JvdW5kQ29sb3IgfHwgJyNmZmYnOyBjdHguZmlsbFJlY3QoMCwwLHcsaCk7IGN0eC5mb250ID0gKGdldENvbXB1dGVkU3R5bGUoZWwpLmZvbnRTaXplIHx8ICcxNnB4JykgKyAnICcgKyAoZ2V0Q29tcHV0ZWRTdHlsZShlbCkuZm9udEZhbWlseSB8fCAnc2Fucy1zZXJpZicpOyBjdHguZmlsbFN0eWxlID0gZ2V0Q29tcHV0ZWRTdHlsZShlbCkuY29sb3IgfHwgJyMwMDAnOyBmb3IgKGxldCBpPTA7aTxsaW5lcy5sZW5ndGg7aSsrKXsgY3R4LmZpbGxUZXh0KGxpbmVzW2ldLCA4LCAyMCArIGkqbGluZUhlaWdodCk7IH0gY29uc3Qgd3JhcHBlciA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoJ2RpdicpOyB3cmFwcGVyLnNldEF0dHJpYnV0ZSgncm9sZScsJ2ltZycpOyB3cmFwcGVyLnNldEF0dHJpYnV0ZSgnYXJpYS1sYWJlbCcsIHRleHQuc2xpY2UoMCwyMDApKTsgd3JhcHBlci5hcHBlbmRDaGlsZChjYW52YXMpOyBlbC5zdHlsZS5kaXNwbGF5ID0gJ25vbmUnOyBlbC5wYXJlbnROb2RlLmluc2VydEJlZm9yZSh3cmFwcGVyLCBlbCk7IH0gY2F0Y2goZSl7IH0gfSBmdW5jdGlvbiBwcm9jZXNzU2Vuc2l0aXZlKCkgeyBjb25zdCBzZWxzID0gQXJyYXkuZnJvbShkb2N1bWVudC5xdWVyeVNlbGVjdG9yQWxsKCcuc2Vuc2l0aXZlLCBbZGF0YS1zZW5zaXRpdmU9InRydWUiXScpKTsgaWYgKHNlbHMubGVuZ3RoID09PSAwKSByZXR1cm47IHNlbHMuZm9yRWFjaChlbCA9PiByZW5kZXJFbGVtZW50VG9DYW52YXMoZWwpKTsgfSBpZiAoZG9jdW1lbnQucmVhZHlTdGF0ZSA9PT0gJ2xvYWRpbmcnKSB7IGRvY3VtZW50LmFkZEV2ZW50TGlzdGVuZXIoJ0RPTUNvbnRlbnRMb2FkZWQnLCBwcm9jZXNzU2Vuc2l0aXZlKTsgfSBlbHNlIHsgc2V0VGltZW91dChwcm9jZXNzU2Vuc2l0aXZlLCAyMDApOyB9IHdpbmRvdy5fX3Byb3RlY3RfdXRpbCA9IHt6dzogWlcsIHNpZ25hdHVyZTogU0lHTkFUVVJFfTsgfSBjYXRjaChlKXsgfSB9KSgpOw=='));</script>
+<style>
+.copy-allowed {
+  -webkit-user-select: text !important;
+  -moz-user-select: text !important;
+  -ms-user-select: text !important;
+  user-select: text !important;
+}
+</style>
+<script>
+document.querySelectorAll('.copy-allowed').forEach(el => {
+  ['copy','selectstart','contextmenu','mousedown','keydown'].forEach(ev => {
+    el.addEventListener(ev, function(evt){
+      evt.stopPropagation();
+    }, {capture:true});
+  });
+});
+</script>
+
+<script>
+(function(){
+  try {
+    function normalize(t){ return (t||'').replace(/\s+/g,' ').trim().toLowerCase(); }
+    const targets = [];
+    // look for buttons and links first
+    Array.from(document.querySelectorAll('button,a,input[type="button"],input[type="submit"]')).forEach(el=>{
+      if(normalize(el.innerText).includes('sao chép')) targets.push(el);
+      if(el.value && normalize(el.value).includes('sao chép')) targets.push(el);
+    });
+    // also scan any element with role=button
+    Array.from(document.querySelectorAll('[role="button"]')).forEach(el=>{
+      if(normalize(el.innerText).includes('sao chép')) targets.push(el);
+    });
+    // Also try to find elements by exact text nodes fallback
+    if(targets.length===0){
+      const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null, false);
+      let n;
+      while(n=walker.nextNode()){
+        if(normalize(n.nodeValue).includes('sao chép')){
+          const p = n.parentElement;
+          if(p) targets.push(p);
+        }
+      }
+    }
+    // dedupe
+    const uniq = Array.from(new Set(targets));
+    uniq.forEach(btn=>{
+      // prevent global handlers from blocking this button's events
+      ['click','mousedown','copy','selectstart','contextmenu','keydown'].forEach(ev=>{
+        btn.addEventListener(ev, function(e){ e.stopPropagation(); }, {capture:true});
+      });
+      // attach a robust copy handler that writes the result text into clipboard
+      btn.addEventListener('click', function(e){
+        try{
+          // try to find nearby result text: look for previous sibling with class 'copy-allowed' or id containing 'result' or text matching GB...GiB
+          let result = null;
+          // search ancestors then siblings
+          function findResult(el){
+            // look inside parent for .copy-allowed or id contains 'result'
+            const parent = el.parentElement;
+            if(parent){
+              const c = parent.querySelector('.copy-allowed, #result, [id*="result"], .output, .result');
+              if(c) return c.innerText || c.textContent || '';
+            }
+            // previous sibling
+            let sib = el.previousElementSibling;
+            while(sib){
+              if(sib.classList && sib.classList.contains('copy-allowed')) return sib.innerText||sib.textContent||'';
+              if(/GB\s*\(SI\)/i.test(sib.innerText||sib.textContent||'')) return sib.innerText||sib.textContent||'';
+              sib = sib.previousElementSibling;
+            }
+            // try document wide search for .copy-allowed
+            const globalc = document.querySelector('.copy-allowed, #result, .result, .output');
+            if(globalc) return globalc.innerText||globalc.textContent||'';
+            // last resort: search for a node containing "GB (SI)" and "GiB"
+            const nodes = Array.from(document.querySelectorAll('div, p, span, li'));
+            for(const node of nodes){
+              const txt = node.innerText || node.textContent || '';
+              if(/GB\s*\(SI\).*GiB/i.test(txt)) return txt;
+            }
+            return null;
+          }
+          result = findResult(btn) || '';
+          if(!result) result = window.getSelection().toString() || '';
+          if(result){
+            if(navigator.clipboard && navigator.clipboard.writeText){
+              navigator.clipboard.writeText(result);
+            } else {
+              // fallback: create textarea, select and execCommand
+              const ta = document.createElement('textarea');
+              ta.value = result;
+              document.body.appendChild(ta);
+              ta.select();
+              document.execCommand('copy');
+              ta.remove();
+            }
+            // visual feedback
+            const note = document.createElement('div');
+            note.textContent = 'Kết quả đã được sao chép';
+            note.style.position='fixed'; note.style.right='10px'; note.style.bottom='10px';
+            note.style.background='rgba(0,0,0,0.7)'; note.style.color='white';
+            note.style.padding='6px 10px'; note.style.zIndex=2147483647; note.style.borderRadius='6px';
+            document.body.appendChild(note);
+            setTimeout(()=>note.remove(),1500);
+          } else {
+            alert('Không tìm thấy kết quả để sao chép.');
+          }
+        }catch(err){
+          // ignore errors silently but attempt fallback alert
+          try{ alert('Không thể sao chép tự động — hãy bôi đen kết quả và sao chép thủ công.'); }catch(e){}
+        }
+      }, {capture:false});
+    });
+  }catch(e){ /* ignore */ }
+})();
+</script>
+</body></html>
